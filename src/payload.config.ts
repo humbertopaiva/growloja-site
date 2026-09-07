@@ -6,6 +6,7 @@ import { Users } from "./collections/Users";
 import { Clients } from "./collections/Clients";
 import { Diagnostics } from "./collections/Diagnostics";
 import { createDbAdapter } from "./db/adapter";
+import { ensureProductionSchema } from "./db/ensureSchema";
 import { seedDemo } from "./lib/diagnostic/seed";
 
 const filename = fileURLToPath(import.meta.url);
@@ -33,26 +34,41 @@ export default buildConfig({
   },
   db: createDbAdapter(),
   async onInit(payload) {
-    const email = process.env.PAYLOAD_ADMIN_EMAIL;
-    const password = process.env.PAYLOAD_ADMIN_PASSWORD;
-    if (email && password) {
-      const { totalDocs: userCount } = await payload.count({ collection: "users", overrideAccess: true });
-      if (userCount === 0) {
-        await payload.create({
+    await ensureProductionSchema(payload);
+
+    try {
+      const email = process.env.PAYLOAD_ADMIN_EMAIL;
+      const password = process.env.PAYLOAD_ADMIN_PASSWORD;
+      if (email && password) {
+        const { totalDocs: userCount } = await payload.count({
           collection: "users",
           overrideAccess: true,
-          data: { email, password, name: "Admin Growloja" },
         });
+        if (userCount === 0) {
+          await payload.create({
+            collection: "users",
+            overrideAccess: true,
+            data: { email, password, name: "Admin Growloja" },
+          });
+        }
       }
-    }
 
-    const shouldSeedDemo =
-      process.env.PAYLOAD_SEED_DEMO === "true" || process.env.NODE_ENV !== "production";
-    if (!shouldSeedDemo) return;
+      const shouldSeedDemo =
+        process.env.PAYLOAD_SEED_DEMO === "true" || process.env.NODE_ENV !== "production";
+      if (!shouldSeedDemo) return;
 
-    const { totalDocs } = await payload.count({ collection: "diagnostics", overrideAccess: true });
-    if (totalDocs === 0) {
-      await seedDemo(payload);
+      const { totalDocs } = await payload.count({
+        collection: "diagnostics",
+        overrideAccess: true,
+      });
+      if (totalDocs === 0) {
+        await seedDemo(payload);
+      }
+    } catch (err) {
+      payload.logger.error({
+        err,
+        msg: "Setup inicial do Payload falhou. O admin ainda pode abrir para criar o primeiro usuário.",
+      });
     }
   },
 });

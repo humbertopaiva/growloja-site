@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  serverExternalPackages: ["pg", "@payloadcms/db-postgres"],
+  serverExternalPackages: ["pg", "@payloadcms/db-postgres", "drizzle-kit"],
   async headers() {
     return [
       {
