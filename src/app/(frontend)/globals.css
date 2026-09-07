@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #291a37;
+  --accent: #b177ff;
+  --accent-soft: #efe4ff;
+  --paper: #f6f4f8;
+  --paper-2: #efeaf4;
+  --white: #ffffff;
+  --muted: #6d6478;
+  --line: rgba(41, 26, 55, 0.1);
+  --line-strong: rgba(41, 26, 55, 0.16);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-space);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-space), "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 80;
+  border-radius: 999px;
+  background: var(--ink);
+  color: white;
+  padding: 0.6rem 1rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(41, 26, 55, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 26, 55, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, black 20%, transparent 75%);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise 0.8s ease forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.08s; }
+.reveal-delay-2 { animation-delay: 0.16s; }
+.reveal-delay-3 { animation-delay: 0.24s; }
+.reveal-delay-4 { animation-delay: 0.32s; }
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.55; }
+}
+
+@keyframes flow {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: flow 1.2s linear infinite;
+}
