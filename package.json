@@ -15,7 +15,7 @@
     "@payloadcms/db-sqlite": "^3.88.0",
     "@payloadcms/next": "^3.88.0",
     "@payloadcms/richtext-lexical": "^3.88.0",
-    "graphql": "^17.0.2",
+    "graphql": "^16.11.0",
     "next": "16.3.4",
     "payload": "^3.88.0",
     "pdf-lib": "^1.17.1",
