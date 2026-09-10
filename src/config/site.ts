@@ -9,10 +9,11 @@ export const site = {
     url: process.env.NEXT_PUBLIC_LOJEE_URL || "https://lojee.com.br",
   },
   contact: {
-    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "5500000000000",
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "5532988555409",
     email: process.env.NEXT_PUBLIC_EMAIL || "contato@growloja.com.br",
     instagram:
-      process.env.NEXT_PUBLIC_INSTAGRAM || "https://instagram.com/growloja",
+      process.env.NEXT_PUBLIC_INSTAGRAM ||
+      "https://instagram.com/growloja.assessoria",
     whatsappMessage:
       process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||
       "Olá, quero solicitar o Diagnóstico de Crescimento Growloja.",
