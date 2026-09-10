@@ -1,60 +1,64 @@
+import Image from "next/image";
 import { Eyebrow, Lead, Section, SectionTitle } from "@/components/ui/Section";
-import { ImageQuote } from "@/components/ui/ImageQuote";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/config/site";
 
-const problems = [
-  {
-    title: "Pessoas",
-    text: "Falta de equipe preparada para cuidar da operação digital.",
-  },
-  {
-    title: "Tecnologia",
-    text: "Ferramentas, integrações e processos que precisam ser configurados.",
-  },
-  {
-    title: "Estratégia",
-    text: "Dúvidas sobre o que vender, para quem vender, onde vender e como competir.",
-  },
-  {
-    title: "Recursos",
-    text: "Uma estrutura própria pode exigir tempo, conhecimento e investimento que muitas empresas não possuem.",
-  },
+const steps = [
+  "O cliente pergunta.",
+  "O vendedor responde.",
+  "O pedido é anotado.",
+  "O orçamento é montado.",
+  "A venda acontece.",
+  "E depois o cliente vai embora.",
 ];
 
 export function Problem() {
   return (
     <Section id="problema">
-      <Reveal>
-        <Eyebrow>O problema</Eyebrow>
-        <SectionTitle>Vender pela internet parece simples. Fazer funcionar não é.</SectionTitle>
-        <Lead>
-          Muitas empresas já perceberam que precisam estar no digital. O problema é
-          transformar essa vontade em uma operação que realmente funcione.
-        </Lead>
-      </Reveal>
-      <div className="mt-12 grid gap-4 md:grid-cols-2">
-        {problems.map((item, index) => (
-          <Reveal key={item.title} delay={index * 70}>
-            <article className="h-full rounded-2xl border border-ink/8 bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-ink/16">
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
-                {item.title}
-              </p>
-              <p className="mt-3 text-lg leading-relaxed text-ink/85">{item.text}</p>
-            </article>
+      <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+        <div>
+          <Reveal>
+            <Eyebrow>O problema</Eyebrow>
+            <SectionTitle>
+              Sua operação já funciona. Mas muita coisa ainda depende de trabalho manual.
+            </SectionTitle>
           </Reveal>
-        ))}
-      </div>
-      <Reveal>
-        <div className="mt-10">
-          <ImageQuote
-            src={site.images.problema.src}
-            alt={site.images.problema.alt}
-            quote="Por isso, muitas empresas tentam entrar no digital sem estrutura — e acabam desistindo."
-            objectPosition="center 30%"
-          />
+          <Reveal>
+            <ol className="mt-10">
+              {steps.map((item, index) => (
+                <li key={item} className="flex gap-4">
+                  <span className="flex w-8 shrink-0 flex-col items-center">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-xs font-medium text-accent-deep ring-1 ring-ink/10">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    {index < steps.length - 1 ? (
+                      <span className="h-5 w-px bg-ink/12" aria-hidden />
+                    ) : null}
+                  </span>
+                  <p className="pt-1 text-lg text-ink">{item}</p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+          <Reveal>
+            <Lead className="mt-8">
+              A Growloja encontra onde a tecnologia e a estratégia podem tirar trabalho do
+              caminho e criar novas oportunidades de venda.
+            </Lead>
+          </Reveal>
         </div>
-      </Reveal>
+        <Reveal delay={80}>
+          <figure className="relative aspect-[4/5] overflow-hidden rounded-[28px] sm:aspect-[4/3] lg:aspect-[4/5]">
+            <Image
+              src={site.images.problema.src}
+              alt={site.images.problema.alt}
+              fill
+              sizes="(min-width: 1024px) 520px, 100vw"
+              className="object-cover object-[center_15%]"
+            />
+          </figure>
+        </Reveal>
+      </div>
     </Section>
   );
 }

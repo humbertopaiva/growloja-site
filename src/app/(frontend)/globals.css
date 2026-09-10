@@ -1,20 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #291a37;
-  --accent: #b177ff;
-  --accent-soft: #efe4ff;
-  --paper: #f6f4f8;
-  --paper-2: #efeaf4;
+  --ink: #171a16;
+  --ink-hover: #2c332b;
+  --accent: #b5e766;
+  --accent-deep: #719d17;
+  --accent-soft: #e2eec5;
+  --paper: #f3f1ea;
+  --paper-2: #f5f6f7;
   --white: #ffffff;
-  --muted: #6d6478;
-  --line: rgba(41, 26, 55, 0.1);
-  --line-strong: rgba(41, 26, 55, 0.16);
+  --muted: #5e6359;
+  --line: rgba(23, 26, 22, 0.1);
+  --line-strong: rgba(23, 26, 22, 0.16);
 }
 
 @theme inline {
   --color-ink: var(--ink);
+  --color-ink-hover: var(--ink-hover);
   --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
   --color-accent-soft: var(--accent-soft);
   --color-paper: var(--paper);
   --color-paper-2: var(--paper-2);
@@ -57,7 +61,7 @@ body {
 
 ::selection {
   background: var(--accent);
-  color: var(--white);
+  color: var(--ink);
 }
 
 .skip-link {
@@ -77,8 +81,8 @@ body {
 
 .grid-fade {
   background-image:
-    linear-gradient(to right, rgba(41, 26, 55, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(41, 26, 55, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(23, 26, 22, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 26, 22, 0.045) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, black 20%, transparent 75%);
 }

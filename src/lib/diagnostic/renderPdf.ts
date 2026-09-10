@@ -1,11 +1,11 @@
 import { PDFDocument, PDFFont, PDFPage, PageSizes, rgb, StandardFonts } from "pdf-lib";
 import type { DiagnosticView } from "./types";
 
-const ink = rgb(41 / 255, 26 / 255, 55 / 255);
-const accent = rgb(177 / 255, 119 / 255, 255 / 255);
-const muted = rgb(109 / 255, 100 / 255, 120 / 255);
-const line = rgb(0.9, 0.87, 0.93);
-const paper = rgb(246 / 255, 244 / 255, 248 / 255);
+const ink = rgb(23 / 255, 26 / 255, 22 / 255);
+const accent = rgb(113 / 255, 157 / 255, 23 / 255);
+const muted = rgb(94 / 255, 99 / 255, 89 / 255);
+const line = rgb(0.88, 0.87, 0.84);
+const paper = rgb(243 / 255, 241 / 255, 234 / 255);
 const white = rgb(1, 1, 1);
 
 const MARGIN = 48;

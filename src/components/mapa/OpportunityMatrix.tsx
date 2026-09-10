@@ -27,7 +27,7 @@ export function OpportunityMatrix({ diagnostic }: { diagnostic: DiagnosticView }
           const items = diagnostic.matrix[quadrant.key];
           return (
             <section key={quadrant.key} className="rounded-3xl border border-ink/8 bg-white p-5">
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent">{quadrant.title}</p>
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent-deep">{quadrant.title}</p>
               <p className="mt-1 text-sm text-muted">{quadrant.hint}</p>
               <ul className="mt-4 space-y-2">
                 {items.length === 0 ? (

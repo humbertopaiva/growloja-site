@@ -37,7 +37,7 @@ export function Competition() {
                 {item}
               </span>
               {index < rivals.length - 1 ? (
-                <span className="text-xs uppercase tracking-[0.14em] text-accent">vs</span>
+                <span className="text-xs uppercase tracking-[0.14em] text-accent-deep">vs</span>
               ) : null}
             </div>
           </Reveal>

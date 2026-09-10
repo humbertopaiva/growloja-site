@@ -15,7 +15,7 @@ export function MapaCard({
   return (
     <article className="rounded-3xl border border-ink/8 bg-white p-6">
       {title ? (
-        <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.16em] text-accent">{title}</h2>
+        <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.16em] text-accent-deep">{title}</h2>
       ) : null}
       {children}
     </article>

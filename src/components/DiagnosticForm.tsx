@@ -149,7 +149,7 @@ export function DiagnosticForm({ onSuccess }: { onSuccess?: () => void }) {
   if (success) {
     return (
       <div className="rounded-2xl border border-ink/10 bg-white p-8 text-center md:p-10">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent-deep">
           Diagnóstico solicitado
         </p>
         <h3 className="mt-3 text-2xl font-medium tracking-tight text-ink">
@@ -366,7 +366,7 @@ export function DiagnosticForm({ onSuccess }: { onSuccess?: () => void }) {
       {serverError ? <p className="text-sm text-red-600">{serverError}</p> : null}
 
       <div className="pt-2">
-        <Button type="submit" variant="accent" size="lg" className="w-full" disabled={submitting}>
+        <Button type="submit" variant="accent" size="lg" className="w-full lg:w-full" disabled={submitting}>
           {submitting ? "Enviando..." : site.cta.formSubmit}
         </Button>
         <p className="mt-3 text-center text-sm text-muted">{site.cta.formHint}</p>

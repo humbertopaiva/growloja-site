@@ -12,7 +12,7 @@ const pillars = [
   },
   {
     title: "Implantar",
-    text: "Colocamos a operação para funcionar.",
+    text: "Colocamos marketing, canais e tecnologia para funcionar no dia a dia da loja.",
   },
   {
     title: "Crescer",
@@ -27,16 +27,16 @@ export function WhatWeAre() {
         <Eyebrow>O que somos</Eyebrow>
         <SectionTitle>É aqui que entra a Growloja.</SectionTitle>
         <Lead>
-          A Growloja é uma operação de implantação e crescimento de vendas pela internet.
-          Funcionamos como um departamento de inteligência, estratégia e execução digital
-          para pequenas e médias empresas.
+          A Growloja é uma assessoria de marketing e tecnologia para pequenas e médias
+          operações de varejo. Atuamos como um braço de estratégia e execução para quem
+          já tem loja e precisa crescer com método.
         </Lead>
       </Reveal>
       <div className="mt-12 grid gap-4 md:grid-cols-4">
         {pillars.map((item, index) => (
           <Reveal key={item.title} delay={index * 70}>
             <article className="h-full rounded-2xl border border-ink/8 p-5">
-              <p className="text-sm font-medium uppercase tracking-[0.14em] text-accent">
+              <p className="text-sm font-medium uppercase tracking-[0.14em] text-accent-deep">
                 {String(index + 1).padStart(2, "0")}
               </p>
               <h3 className="mt-4 text-xl font-medium">{item.title}</h3>
@@ -50,7 +50,7 @@ export function WhatWeAre() {
           {pillars.map((item, index) => (
             <span key={item.title} className="flex flex-col items-start gap-2">
               <span className="rounded-full bg-paper-2 px-4 py-2">{item.title}</span>
-              {index < pillars.length - 1 ? <span className="ml-6 text-accent">↓</span> : null}
+              {index < pillars.length - 1 ? <span className="ml-6 text-accent-deep">↓</span> : null}
             </span>
           ))}
         </div>

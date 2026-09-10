@@ -1,9 +1,13 @@
 export const site = {
   name: "Growloja",
-  tagline: "Colocamos sua empresa para vender pela internet.",
+  tagline: "Sua loja já vende. Vamos fazer sua operação vender melhor.",
   shortDescription:
-    "Implantação e crescimento de vendas pela internet para pequenas e médias empresas.",
+    "Assessoria para pequenas e médias operações de varejo.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://growloja.com.br",
+  lojee: {
+    name: "Lojee",
+    url: process.env.NEXT_PUBLIC_LOJEE_URL || "https://lojee.com.br",
+  },
   contact: {
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "5500000000000",
     email: process.env.NEXT_PUBLIC_EMAIL || "contato@growloja.com.br",
@@ -18,35 +22,47 @@ export const site = {
     gaId: process.env.NEXT_PUBLIC_GA_ID || "",
   },
   seo: {
-    title: "Growloja | Colocamos sua empresa para vender pela internet",
+    title: "Growloja | Sua loja já vende. Vamos fazer sua operação vender melhor.",
     description:
-      "A Growloja estrutura, implanta e acompanha a operação digital de empresas tradicionais. Diagnóstico de crescimento gratuito e sem compromisso.",
+      "A Growloja identifica gargalos e oportunidades e estrutura estratégias que conectam vendas, marketing e tecnologia para pequenas e médias operações de varejo. Diagnóstico gratuito e sem compromisso.",
   },
   cta: {
-    primary: "Solicitar diagnóstico",
-    secondary: "Como funciona",
-    formSubmit: "Quero meu diagnóstico",
+    primary: "Fazer diagnóstico gratuito",
+    secondary: "Como funciona o diagnóstico",
+    formSubmit: "Quero fazer meu diagnóstico",
     formHint: "Gratuito e sem compromisso.",
   },
   nav: [
     { href: "/#inicio", label: "Início" },
-    { href: "/#como-funciona", label: "Como funciona" },
-    { href: "/#solucoes", label: "Soluções" },
+    { href: "/#o-que-fazemos", label: "O que fazemos" },
+    { href: "/#estrategia", label: "Estratégia" },
     { href: "/diagnostico", label: "Diagnóstico" },
     { href: "/#contato", label: "Contato" },
   ],
   images: {
+    hero: {
+      src: "/images/hero-loja.jpg",
+      alt: "Atendimento na loja: vendedor e cliente em um momento de confiança",
+    },
     problema: {
-      src: "/images/problema.jpg",
-      alt: "Dono de loja tradicional no fim do expediente, diante das prateleiras",
+      src: "/images/atendimento-confianca.jpg",
+      alt: "Vendedora atendendo um cliente no balcão da loja",
     },
     operacao: {
       src: "/images/operacao.jpg",
       alt: "Equipe de varejo cuidando da operação real da loja",
     },
+    fisicoDigital: {
+      src: "/images/qr-loja.jpg",
+      alt: "Cliente na loja física acessando uma oferta digital pelo celular",
+    },
     cta: {
-      src: "/images/cta-final.jpg",
-      alt: "Empreendedores na porta da loja física que já construíram",
+      src: "/images/donos-loja.jpg",
+      alt: "Donos de loja na porta do negócio que já construíram",
+    },
+    diagnosticoHero: {
+      src: "/images/diagnostico-hero-placeholder.jpg",
+      alt: "Consultoria em uma loja de materiais de construção durante o diagnóstico",
     },
     imersao: {
       src: "/images/imersao.jpg",
@@ -54,7 +70,7 @@ export const site = {
     },
     diagnosticoClose: {
       src: "/images/diagnostico-close.jpg",
-      alt: "Dono de loja tradicional no meio da operação que já construiu",
+      alt: "Dona de loja no meio da operação que já construiu",
     },
   },
 } as const;

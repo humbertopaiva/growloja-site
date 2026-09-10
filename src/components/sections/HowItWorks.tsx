@@ -16,7 +16,7 @@ const steps = [
   {
     number: "03",
     title: "Implantar",
-    text: "Configuramos ferramentas, processos, canais e automações necessários.",
+    text: "Colocamos marketing, canais, ferramentas e processos para funcionar no dia a dia.",
   },
   {
     number: "04",
@@ -36,7 +36,7 @@ export function HowItWorks() {
         {steps.map((item, index) => (
           <Reveal key={item.number} delay={index * 70}>
             <article className="relative h-full border-t border-ink/12 pt-5">
-              <p className="text-4xl font-medium text-accent">{item.number}</p>
+              <p className="text-4xl font-medium text-accent-deep">{item.number}</p>
               <h3 className="mt-4 text-xl font-medium">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{item.text}</p>
             </article>

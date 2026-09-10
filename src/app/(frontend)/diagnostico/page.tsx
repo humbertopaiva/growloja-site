@@ -9,7 +9,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 export const metadata: Metadata = {
   title: "Diagnóstico de Crescimento",
   description:
-    "Descubra onde sua empresa pode crescer. O Diagnóstico de Crescimento Growloja é uma imersão no negócio para encontrar gargalos, oportunidades e o que fazer primeiro. Gratuito e sem compromisso.",
+    "Descubra onde sua operação de varejo pode crescer. O Diagnóstico de Crescimento Growloja é uma imersão no negócio para encontrar gargalos, oportunidades e o que fazer primeiro. Gratuito e sem compromisso.",
   alternates: {
     canonical: "/diagnostico",
   },
@@ -29,7 +29,7 @@ export default function DiagnosticoPage() {
         <section id="formulario" className="scroll-mt-24 bg-paper py-20 md:py-28">
           <div className="mx-auto grid max-w-6xl gap-12 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent-deep">
                 Solicitar diagnóstico
               </p>
               <h2 className="mt-4 text-3xl font-medium tracking-tight md:text-5xl">

@@ -10,7 +10,7 @@ export function JsonLd() {
     email: site.contact.email,
     areaServed: "BR",
     slogan: site.tagline,
-    serviceType: "Implantação e crescimento de vendas pela internet",
+    serviceType: "Assessoria de marketing e tecnologia para operações de varejo",
   };
 
   return (

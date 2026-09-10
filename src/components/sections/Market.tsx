@@ -30,7 +30,7 @@ export function Market() {
         {movements.map((item, index) => (
           <Reveal key={item.title} delay={index * 80}>
             <article className="h-full border-t border-ink/10 pt-5">
-              <p className="text-sm font-medium uppercase tracking-[0.14em] text-accent">
+              <p className="text-sm font-medium uppercase tracking-[0.14em] text-accent-deep">
                 {item.title}
               </p>
               <p className="mt-3 leading-relaxed text-muted">{item.text}</p>

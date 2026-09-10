@@ -6,44 +6,36 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const faqs = [
   {
+    q: "Já vendo na loja e no WhatsApp. Vocês ainda fazem sentido?",
+    a: "Sim. A maior parte das operações que atendemos já vende. O trabalho é conectar canais, tirar trabalho manual do caminho e encontrar onde a operação pode vender melhor.",
+  },
+  {
     q: "Preciso já ter um e-commerce?",
-    a: "Não. Atendemos empresas que ainda vendem só no físico e também quem já tem alguma operação digital. O ponto de partida é o seu cenário atual.",
+    a: "Não. O ponto de partida é o seu cenário atual — loja física, WhatsApp, Instagram ou um digital que ainda não se conversa com o resto da operação.",
   },
   {
-    q: "Atendem empresas que ainda vendem apenas no físico?",
-    a: "Sim. Esse é um dos nossos principais cenários: estruturar a primeira operação de vendas pela internet sem improvisar.",
-  },
-  {
-    q: "Vocês trabalham com empresas de cidades pequenas?",
-    a: "Sim. O digital não depende de uma capital. Ajustamos canais, oferta e operação à realidade local da empresa.",
+    q: "Qual a diferença entre Growloja e Lojee?",
+    a: "A Growloja cuida do método, do diagnóstico, da estratégia e do acompanhamento. A Lojee é a tecnologia: e-commerce, orçamentos, fidelização, campanhas e outras soluções para o varejo.",
   },
   {
     q: "A Growloja é uma agência?",
-    a: "Não. Não somos uma agência de marketing. Somos uma operação de implantação e crescimento de vendas pela internet.",
+    a: "Não no modelo tradicional. Somos uma assessoria para o varejo: entendemos a operação, definimos a estratégia e só então colocamos marketing e tecnologia para funcionar no dia a dia.",
   },
   {
     q: "Vocês implementam as soluções?",
-    a: "Sim. Não entregamos só uma análise. Estruturamos, implantamos e acompanhamos a operação para ela funcionar no dia a dia.",
+    a: "Sim. Não entregamos só uma análise. Depois do diagnóstico, estruturamos os canais, os processos e a tecnologia para a loja operar melhor.",
   },
   {
-    q: "Vocês trabalham com marketplaces?",
-    a: "Sim, quando faz sentido para o negócio. Mercado Livre, Shopee e outros canais entram na estratégia se forem uma alavanca real — não uma obrigação.",
+    q: "Como funciona o diagnóstico?",
+    a: "Analisamos gargalos, oportunidades, canais, processos e possibilidades de automação. Você recebe prioridades e próximos passos — não uma lista genérica de ferramentas.",
   },
   {
     q: "Quanto custa?",
     a: "O diagnóstico inicial é gratuito e sem compromisso. Depois dele, propomos a implantação e o acompanhamento com base no cenário da sua empresa.",
   },
   {
-    q: "Como funciona o diagnóstico?",
-    a: "Em até 15 dias analisamos seu negócio, mercado, concorrência, produtos e presença digital para identificar gargalos, oportunidades e próximos passos.",
-  },
-  {
-    q: "Quanto tempo leva para começar?",
-    a: "O diagnóstico inicial acontece em até 15 dias. A implantação começa depois do alinhamento do plano.",
-  },
-  {
     q: "Vocês acompanham os resultados?",
-    a: "Sim. Acompanhamento mensal, reuniões de alinhamento e apresentação de resultados para ajustar o que precisa crescer.",
+    a: "Sim. Acompanhamento, alinhamento e ajustes contínuos para a operação continuar evoluindo.",
   },
 ];
 
@@ -68,7 +60,7 @@ export function FAQ() {
                 onClick={() => setOpen(isOpen ? null : index)}
               >
                 <span className="text-lg font-medium tracking-tight">{item.q}</span>
-                <span className="mt-1 text-accent" aria-hidden>
+                <span className="mt-1 text-accent-deep" aria-hidden>
                   {isOpen ? "−" : "+"}
                 </span>
               </button>

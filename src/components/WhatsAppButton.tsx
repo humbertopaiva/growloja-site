@@ -1,12 +1,22 @@
+"use client";
+
+import { useFoldCtaOutOfView } from "@/hooks/useFoldCtaOutOfView";
 import { site, whatsappUrl } from "@/config/site";
+import { cn } from "@/lib/cn";
 
 export function WhatsAppButton() {
+  const stickyCtaVisible = useFoldCtaOutOfView();
+
   return (
     <a
       href={whatsappUrl()}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition hover:scale-105 md:bottom-6 md:right-6 md:h-14 md:w-14 bottom-24"
+      className={cn(
+        "fixed right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-[bottom,transform,opacity] duration-300 hover:scale-105 md:bottom-6 md:right-6 md:h-14 md:w-14",
+        "in-[.mobile-nav-open]:pointer-events-none in-[.mobile-nav-open]:opacity-0",
+        stickyCtaVisible ? "bottom-24" : "bottom-4",
+      )}
       aria-label="Falar no WhatsApp"
     >
       <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current" aria-hidden>

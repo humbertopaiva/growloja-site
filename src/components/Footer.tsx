@@ -8,7 +8,8 @@ export function Footer() {
         <div>
           <Logo inverted />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-            Implantação e crescimento de vendas pela internet.
+            Identificamos gargalos, conectamos canais e estruturamos a operação
+            para vender melhor.
           </p>
         </div>
         <div>

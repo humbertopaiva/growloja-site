@@ -95,7 +95,7 @@ export function ExampleDashboard() {
       <Reveal>
         <div
           ref={ref}
-          className="relative mt-12 overflow-hidden rounded-[28px] bg-ink p-5 text-white shadow-[0_24px_80px_rgba(41,26,55,0.18)] md:p-8"
+          className="relative mt-12 overflow-hidden rounded-[28px] bg-ink p-5 text-white shadow-[0_24px_80px_rgba(23,26,22,0.18)] md:p-8"
         >
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>

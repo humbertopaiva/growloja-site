@@ -11,9 +11,9 @@ const agency = [
 const growloja = [
   "Entende o negócio.",
   "Analisa o mercado.",
-  "Define oportunidades.",
+  "Define marketing e canais.",
+  "Escolhe e configura a tecnologia.",
   "Implanta processos.",
-  "Executa melhorias.",
   "Acompanha indicadores.",
   "Busca crescimento em vendas.",
 ];
@@ -22,8 +22,8 @@ export function NotAgency() {
   return (
     <Section className="bg-white">
       <Reveal>
-        <Eyebrow>Mais do que marketing</Eyebrow>
-        <SectionTitle>Mais do que marketing. Uma operação de vendas.</SectionTitle>
+        <Eyebrow>Mais do que uma agência</Eyebrow>
+        <SectionTitle>Não somos uma agência tradicional. Somos uma assessoria para o varejo.</SectionTitle>
       </Reveal>
       <div className="mt-12 grid gap-4 md:grid-cols-2">
         <Reveal>

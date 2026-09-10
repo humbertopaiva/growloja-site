@@ -78,7 +78,7 @@ export function GrowthMap() {
       </Reveal>
 
       <Reveal>
-        <p className="mt-10 text-sm font-medium uppercase tracking-[0.16em] text-accent">
+        <p className="mt-10 text-sm font-medium uppercase tracking-[0.16em] text-accent-deep">
           Mapa de Crescimento Growloja
         </p>
       </Reveal>
@@ -87,7 +87,7 @@ export function GrowthMap() {
         {overview.map((block, index) => (
           <Reveal key={block.number} delay={index * 70}>
             <article className="flex h-full flex-col rounded-3xl border border-ink/8 bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-ink/16">
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent-deep">
                 {block.number}
               </p>
               <h3 className="mt-3 text-xl font-medium tracking-tight">{block.title}</h3>
@@ -106,7 +106,7 @@ export function GrowthMap() {
 
       <Reveal>
         <article className="mt-4 rounded-3xl border border-ink/8 bg-white p-6 md:p-8">
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent">04</p>
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent-deep">04</p>
           <h3 className="mt-3 text-2xl font-medium tracking-tight">O que fazer primeiro</h3>
           <p className="mt-3 max-w-2xl text-muted">
             Nem toda oportunidade merece ser executada agora. A Growloja ajuda você a

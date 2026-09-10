@@ -1,20 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { saveDiagnosticLead, type DiagnosticLead } from "@/lib/diagnostic/saveLead";
 
-type Payload = {
-  nome?: string;
-  empresa?: string;
-  whatsapp?: string;
-  email?: string;
-  cidade?: string;
-  segmento?: string;
-  siteInstagram?: string;
-  vendeOnline?: string;
-  objetivo?: string;
-  dificuldade?: string;
-  comoVende?: string;
-  comoVendeOutra?: string;
+type Payload = Partial<DiagnosticLead> & {
   melhorar?: string[];
-  melhorarOutro?: string;
 };
 
 function isValidEmail(value: string) {
@@ -34,7 +22,7 @@ export async function POST(request: NextRequest) {
   const objetivo = body.objetivo?.trim() || "";
   const dificuldade = body.dificuldade?.trim() || "";
   const comoVende = body.comoVende?.trim() || "";
-  const melhorar = Array.isArray(body.melhorar) ? body.melhorar : [];
+  const melhorar = Array.isArray(body.melhorar) ? body.melhorar.filter(Boolean) : [];
 
   if (
     !nome ||
@@ -52,37 +40,41 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: false, error: "Dados inválidos" }, { status: 400 });
   }
 
-  const lead = {
-    ...body,
+  const lead: DiagnosticLead = {
     nome,
     empresa,
     whatsapp,
     email,
     cidade,
     segmento,
+    siteInstagram: body.siteInstagram?.trim() || "",
     vendeOnline,
     objetivo,
     dificuldade,
     comoVende,
+    comoVendeOutra: body.comoVendeOutra?.trim() || "",
     melhorar,
-    createdAt: new Date().toISOString(),
-    source: "diagnostico-growloja",
+    melhorarOutro: body.melhorarOutro?.trim() || "",
   };
 
-  const webhook = process.env.DIAGNOSTICO_WEBHOOK_URL;
+  try {
+    await saveDiagnosticLead(lead);
+  } catch (error) {
+    console.error("[diagnostico] falha ao salvar no Payload", error);
+    return NextResponse.json({ ok: false, error: "Falha ao salvar" }, { status: 500 });
+  }
 
+  const webhook = process.env.DIAGNOSTICO_WEBHOOK_URL;
   if (webhook) {
     const response = await fetch(webhook, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(lead),
+      body: JSON.stringify({ ...lead, createdAt: new Date().toISOString(), source: "diagnostico-growloja" }),
     });
 
     if (!response.ok) {
-      return NextResponse.json({ ok: false, error: "Falha no destino" }, { status: 502 });
+      console.error("[diagnostico] webhook falhou", response.status);
     }
-  } else {
-    console.info("[diagnostico]", JSON.stringify(lead));
   }
 
   return NextResponse.json({ ok: true });

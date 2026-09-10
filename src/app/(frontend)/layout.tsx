@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   description: site.seo.description,
   applicationName: site.name,
   keywords: [
-    "vender pela internet",
-    "implantação de e-commerce",
-    "vendas online para varejo",
+    "assessoria para varejo",
+    "marketing e tecnologia para varejo",
+    "operação de varejo",
+    "e-commerce para loja física",
     "diagnóstico de crescimento",
-    "operação digital",
-    "PME",
     "Growloja",
+    "Lojee",
   ],
   authors: [{ name: site.name, url: site.url }],
   openGraph: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#291a37",
+  themeColor: "#171a16",
   width: "device-width",
   initialScale: 1,
 };

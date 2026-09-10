@@ -34,7 +34,7 @@ export function Differential() {
               <span className="rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium">
                 {item}
               </span>
-              {index < flow.length - 1 ? <span className="hidden text-accent sm:inline">→</span> : null}
+              {index < flow.length - 1 ? <span className="hidden text-accent-deep sm:inline">→</span> : null}
             </div>
           </Reveal>
         ))}

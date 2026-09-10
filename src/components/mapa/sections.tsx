@@ -67,7 +67,7 @@ export function Overview({ diagnostic, token }: { diagnostic: DiagnosticView; to
     <div className="space-y-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent-deep">
             Diagnóstico de Crescimento
           </p>
           <h1 className="mt-2 text-4xl font-medium tracking-tight">{diagnostic.companyName}</h1>
@@ -306,11 +306,11 @@ export function CompetitorsSection({ diagnostic }: { diagnostic: DiagnosticView 
               ) : null}
               <div className="mt-4 grid gap-3 text-sm md:grid-cols-2">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.14em] text-accent">Forças</p>
+                  <p className="text-xs uppercase tracking-[0.14em] text-accent-deep">Forças</p>
                   <p className="mt-1">{item.strengths || emptyCopy.missing}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.14em] text-accent">Fraquezas</p>
+                  <p className="text-xs uppercase tracking-[0.14em] text-accent-deep">Fraquezas</p>
                   <p className="mt-1">{item.weaknesses || emptyCopy.missing}</p>
                 </div>
               </div>
@@ -418,7 +418,7 @@ export function OpportunitiesSection({ diagnostic }: { diagnostic: DiagnosticVie
           <ol className="space-y-4">
             {diagnostic.topOpportunities.map((item, index) => (
               <li key={item.id} className="border-t border-ink/8 pt-4 first:border-0 first:pt-0">
-                <p className="text-xs text-accent">{String(index + 1).padStart(2, "0")}</p>
+                <p className="text-xs text-accent-deep">{String(index + 1).padStart(2, "0")}</p>
                 <p className="mt-1 text-lg font-medium">{item.title}</p>
                 <p className="mt-1 text-sm text-muted">{item.description}</p>
                 <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted">

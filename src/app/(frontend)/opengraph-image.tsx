@@ -15,8 +15,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f6f4f8",
-          color: "#291a37",
+          background: "#f3f1ea",
+          color: "#171a16",
           padding: 72,
           fontFamily: "sans-serif",
         }}
@@ -36,11 +36,11 @@ export default function OpenGraphImage() {
               width: 36,
               height: 36,
               borderRadius: 10,
-              background: "#291a37",
+              background: "#171a16",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              color: "#b177ff",
+              color: "#b5e766",
               fontSize: 20,
             }}
           >
@@ -49,14 +49,11 @@ export default function OpenGraphImage() {
           GROWLOJA
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20, maxWidth: 920 }}>
-          <div style={{ fontSize: 58, fontWeight: 700, lineHeight: 1.1 }}>
-            Colocamos sua empresa para vender pela internet.
-          </div>
-          <div style={{ fontSize: 26, color: "#6d6478", lineHeight: 1.4 }}>
-            Implantação e crescimento de vendas para negócios que já existem no físico.
+          <div style={{ fontSize: 48, fontWeight: 700, lineHeight: 1.12 }}>
+            {site.tagline}
           </div>
         </div>
-        <div style={{ fontSize: 22, color: "#b177ff", fontWeight: 600 }}>
+        <div style={{ fontSize: 22, color: "#719d17", fontWeight: 600 }}>
           Diagnóstico de Crescimento gratuito
         </div>
       </div>

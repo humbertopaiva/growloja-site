@@ -73,7 +73,7 @@ export function DiagnosticoSteps() {
         {steps.map((step, index) => (
           <Reveal key={step.number} delay={index * 70}>
             <article className="flex h-full flex-col rounded-3xl border border-ink/8 bg-paper p-6 transition duration-300 hover:-translate-y-0.5 hover:border-ink/16 md:p-7">
-              <p className="text-3xl font-medium text-accent">{step.number}</p>
+              <p className="text-3xl font-medium text-accent-deep">{step.number}</p>
               <h3 className="mt-4 text-xl font-medium tracking-tight">{step.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{step.text}</p>
               <ul className="mt-5 grid flex-1 gap-2 sm:grid-cols-2">

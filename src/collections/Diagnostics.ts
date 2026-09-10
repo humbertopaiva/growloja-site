@@ -130,6 +130,14 @@ export const Diagnostics: CollectionConfig = {
               ],
             },
             {
+              name: "intakeNotes",
+              type: "textarea",
+              label: "Respostas do formulário",
+              admin: {
+                description: "Preenchido automaticamente quando o lead chega pelo site.",
+              },
+            },
+            {
               name: "shareToken",
               type: "text",
               unique: true,

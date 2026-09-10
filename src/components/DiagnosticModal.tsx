@@ -27,7 +27,7 @@ export function DiagnosticModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center md:items-center">
+    <div className="fixed inset-0 z-[60] flex items-end justify-center md:items-center">
       <button
         type="button"
         aria-label="Fechar formulário"
@@ -42,7 +42,7 @@ export function DiagnosticModal() {
       >
         <div className="mb-6 flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent-deep">
               Diagnóstico de Crescimento Growloja
             </p>
             <h2 id="diagnostico-title" className="mt-2 text-2xl font-medium tracking-tight">

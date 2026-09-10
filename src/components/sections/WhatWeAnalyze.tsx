@@ -6,7 +6,7 @@ const blocks = [
   { title: "Concorrência", text: "Preços, produtos, posicionamento e estratégias." },
   { title: "Clientes", text: "Comportamento, necessidades e oportunidades." },
   { title: "Portfólio", text: "Produtos, margens, demanda e oportunidades." },
-  { title: "Digital", text: "E-commerce, SEO, conversão e canais." },
+  { title: "Digital", text: "Canais, marketing, conversão, e-commerce e presença online." },
   { title: "Operação", text: "Processos, automação, ferramentas e eficiência." },
 ];
 
@@ -23,7 +23,7 @@ export function WhatWeAnalyze() {
         {blocks.map((item, index) => (
           <Reveal key={item.title} delay={index * 50}>
             <article className="h-full rounded-2xl bg-paper p-6">
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent">
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-accent-deep">
                 {item.title}
               </p>
               <p className="mt-3 text-lg text-ink">{item.text}</p>
